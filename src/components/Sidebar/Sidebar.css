@@ -1,0 +1,233 @@
+.sidebar {
+  width: 260px;
+  background-color: #66747b;
+  height: 160vh;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s;
+}
+
+.sidebar.collapsed {
+  width: 30px;
+  padding: 20px 10px;
+  overflow: hidden;
+  height: 100vh;
+  min-height: 100vh;
+  transition: width 0.3s;
+}
+
+.sidebar-toggle {
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hamburger {
+  font-size: 28px;
+}
+
+.sidebar.collapsed .logo,
+.sidebar.collapsed .host,
+.sidebar.collapsed .menu,
+.sidebar.collapsed .license {
+  display: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 100px;
+  margin-top: -30px;
+}
+
+.sidebar .logo img {
+  width: 80%;
+  max-width: 150px;
+}
+
+.sidebar-menu-wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  
+}
+
+.sidebar .host {
+  margin: 0 0 18px 0;
+  font-weight: 100;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  user-select: none;
+  padding: 8px 0 4px 0;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0 0 0 10px;
+  margin: 0 0 10px 0;
+}
+
+.sidebar .menu li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #3c4a52;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  color: white;
+}
+
+.sidebar .menu li:hover, .sidebar .menu .active {
+  background-color: #4aa3a7;
+}
+
+.sidebar .license {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+.sidebar .license .dev a {
+  color: #4aa3a7;
+  text-decoration: none;
+}
+
+.chevron-icon {
+ 
+  font-size: 14px;
+  vertical-align: middle;
+  transition: transform 0.2s;
+  display: inline-block;
+  padding-right: 160px;
+}
+
+.chevron-icon.open {
+  /* Optionally, you can rotate or style differently if using SVG */
+}
+
+.sidebar.light-theme {
+  background-color: #fff;
+  color: #222;
+}
+
+.sidebar.dark-theme {
+  background-color: #44535b;
+  color: #fff;
+}
+
+.sidebar.light-theme .menu li {
+  background-color: #f0f0f0;
+  color: #222;
+}
+
+.sidebar.light-theme .menu li:hover, .sidebar.light-theme .menu .active {
+  background-color: #4aa3a7;
+  color: #fff;
+}
+
+.sidebar.light-theme .license {
+  color: #555;
+}
+
+.sidebar.light-theme .hamburger,
+.sidebar.light-theme .chevron-icon,
+.sidebar.light-theme .sidebar-toggle {
+  color: #222 !important;
+}
+
+.sidebar.light-theme .profile-icon {
+  background: #f0f0f0 !important;
+  color: #222 !important;
+  border: 1px solid #ccc;
+}
+
+.sidebar.light-theme .profile-icon:hover {
+  background: #4aa3a7 !important;
+  color: #fff !important;
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 100vw;
+    max-width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    min-height: 100vh;
+    z-index: 1000;
+    padding: 20px 10px;
+    transition: width 0.3s;
+  }
+  .sidebar.collapsed {
+    width: 0;
+    min-width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .sidebar-toggle {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 2000;
+    background: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .sidebar-toggle .hamburger {
+    color: #222;
+    font-size: 28px;
+  }
+  .sidebar.dark-theme .sidebar-toggle {
+    background: #2e3b42;
+  }
+  .sidebar.dark-theme .sidebar-toggle .hamburger {
+    color: #fff;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar { padding: 8px 2px; }
+  .logo { margin-bottom: 40px; margin-top: 0; }
+  .sidebar .license { font-size: 12px; }
+  .sidebar .menu li { font-size: 1.1rem; padding: 14px 8px; }
+}
+
+@media (max-width: 500px) {
+  .sidebar .menu li {
+    font-size: 1.2rem;
+    padding: 18px 8px;
+  }
+  .sidebar .host {
+    font-size: 1.1rem;
+    padding: 12px 0 8px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar .menu li {
+    font-size: 1rem;
+    padding: 10px 4px;
+  }
+  .sidebar .host {
+    font-size: 0.95rem;
+    padding: 8px 0 4px 0;
+  }
+}

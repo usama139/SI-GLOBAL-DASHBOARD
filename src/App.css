@@ -1,0 +1,186 @@
+.app.dark-theme, body.dark-theme, html.dark-theme {
+  background-color: #001f23;
+  color: white;
+}
+
+.app.light-theme, body.light-theme, html.light-theme {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+.main-content.light-theme {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+.main-content.dark-theme {
+  background-color: #001f23;
+  color: #fff;
+}
+
+body, html, #root {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #001f23;
+  color: white;
+}
+
+.app {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 32px 0 0;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.profile-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  background: #3c4a52;
+  border-radius: 50%;
+  padding: 5px;
+  transition: background 0.2s;
+  margin-bottom: 20px;
+}
+
+.profile-icon:hover {
+  background: #4aa3a7;
+}
+
+.profile-page, .login-page, .signup-page, .forgot-page {
+  background: #012a2f;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 40px 32px;
+  max-width: 400px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-page.light-theme, .login-page.light-theme, .signup-page.light-theme, .forgot-page.light-theme {
+  background: #f5f5f5 !important;
+  color: #222 !important;
+  box-shadow: 0 4px 10px rgba(196,196,196,0.08);
+  border: 1px solid #ccc;
+}
+
+.profile-page.light-theme input,
+.login-page.light-theme input,
+.signup-page.light-theme input,
+.forgot-page.light-theme input {
+  background: #fff !important;
+  color: #222 !important;
+  border: 1px solid #ccc !important;
+}
+
+.profile-page.light-theme button,
+.login-page.light-theme button,
+.signup-page.light-theme button,
+.forgot-page.light-theme button {
+  background: #4aa3a7 !important;
+  color: #fff !important;
+}
+
+.profile-page.light-theme button:hover,
+.login-page.light-theme button:hover,
+.signup-page.light-theme button:hover,
+.forgot-page.light-theme button:hover {
+  background: #3c4a52 !important;
+  color: #fff !important;
+}
+
+.profile-page h2, .login-page h2, .signup-page h2, .forgot-page h2 {
+  margin-bottom: 24px;
+}
+
+.profile-page button, .login-page button, .signup-page button, .forgot-page button {
+  background: #4aa3a7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 24px;
+  margin-top: 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.profile-page button:hover, .login-page button:hover, .signup-page button:hover, .forgot-page button:hover {
+  background: #3c4a52;
+}
+
+.profile-link {
+  color: #4aa3a7;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.profile-link:hover {
+  color: #fff;
+}
+
+.profile-page p, .login-page p, .signup-page p, .forgot-page p {
+  margin: 8px 0;
+}
+
+.login-page form, .signup-page form, .forgot-page form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-page input, .signup-page input, .forgot-page input {
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #3c4a52;
+  background: #001f23;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.login-page input:focus, .signup-page input:focus, .forgot-page input:focus {
+  outline: none;
+  border-color: #4aa3a7;
+}
+
+body.light-theme, html.light-theme, .app.light-theme {
+  background: #f5f5f5 !important;
+  color: #222 !important;
+}
+
+@media (max-width: 600px) {
+  .profile-page, .login-page, .signup-page, .forgot-page {
+    max-width: 98vw;
+    padding: 16px 4vw;
+    margin: 16px auto;
+    border-radius: 6px;
+    font-size: 0.98rem;
+  }
+  .login-page input, .signup-page input, .forgot-page input {
+    font-size: 1rem;
+    padding: 8px;
+  }
+  .profile-page button, .login-page button, .signup-page button, .forgot-page button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
