@@ -13,7 +13,7 @@
   width: 30px;
   padding: 20px 10px;
   overflow: hidden;
-  height: 100vh;
+  height: 160vh;
   min-height: 100vh;
   transition: width 0.3s;
 }
@@ -96,7 +96,7 @@
 .sidebar .license {
   font-size: 14px;
   color: #ccc;
-  margin-top: 20px;
+  margin-top: 450px;
 }
 
 .sidebar .license .dev a {
@@ -111,10 +111,16 @@
   transition: transform 0.2s;
   display: inline-block;
   padding-right: 160px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .chevron-icon.open {
   /* Optionally, you can rotate or style differently if using SVG */
+}
+
+.chevron-icon:hover {
+  color: #4aa3a7;
 }
 
 .sidebar.light-theme {
@@ -158,6 +164,46 @@
   color: #fff !important;
 }
 
+.host-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  
+
+}
+
+.chevron-icon1, .chevron-icon2 {
+  font-size: 14px;
+  vertical-align: middle;
+  transition: transform 0.2s;
+  display: inline-block;
+  margin-left: 42px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.chevron-icon2 {
+  margin-left: 18px;
+}
+
+.chevron-icon1:hover, .chevron-icon2:hover {
+  color: #4aa3a7;
+}
+
+.sidebar.collapsed .sidebar-section-chevrons {
+  align-items: center;
+  gap: 18px;
+}
+
+.sidebar.collapsed .chevron-icon,
+.sidebar.collapsed .chevron-icon1,
+.sidebar.collapsed .chevron-icon2 {
+  margin-left: 0 !important;
+  margin-top: 80px;
+  margin-bottom: -38px;
+  display: block;
+}
+
 @media (max-width: 700px) {
   .sidebar {
     width: 100vw;
@@ -176,6 +222,7 @@
     min-width: 0;
     padding: 0;
     overflow: hidden;
+    
   }
   .sidebar-toggle {
     position: fixed;
@@ -184,8 +231,8 @@
     z-index: 2000;
     background: #fff;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,7 +240,7 @@
   }
   .sidebar-toggle .hamburger {
     color: #222;
-    font-size: 28px;
+    font-size: 18px;
   }
   .sidebar.dark-theme .sidebar-toggle {
     background: #2e3b42;
@@ -205,7 +252,7 @@
 
 @media (max-width: 600px) {
   .sidebar { padding: 8px 2px; }
-  .logo { margin-bottom: 40px; margin-top: 0; }
+  .logo {  margin-top: 0; padding-top: 50px; margin-bottom: 50px; }
   .sidebar .license { font-size: 12px; }
   .sidebar .menu li { font-size: 1.1rem; padding: 14px 8px; }
 }

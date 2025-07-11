@@ -9,6 +9,7 @@ import {
   Legend,
   ResponsiveContainer
 } from "recharts";
+import { useTheme } from "../../App";
 import "./BackupLineChart.css"; // 👈 Import CSS
 
 const data = [
@@ -20,9 +21,14 @@ const data = [
 ];
 
 const BackupLineChart = () => {
+  const { theme } = useTheme();
+  const chartBg = theme === 'dark' ? '#003238' : '#f7fafd';
   return (
-    <div className="chart">
-      <h2>VM Backup Counts Over the Last 30 Days</h2>
+    <div
+      className="chart"
+      style={{ background: chartBg, borderRadius: 16, boxShadow: '0 2px 12px rgba(0,0,0,0.10)', padding: '0px 1px 10px 1px', marginBottom: 18 }}
+    >
+      <h3 style={{fontSize:'0.9rem',}}>VM Backup Counts Over the Last 30 Days</h3>
       <div style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', paddingRight:'45px'}}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>

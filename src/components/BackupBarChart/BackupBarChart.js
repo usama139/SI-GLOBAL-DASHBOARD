@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
+import { useTheme } from "../../App";
 import "./BackupBarChart.css"; // 👈 Custom CSS (can reuse same chart class)
 
 const data = [
@@ -19,9 +20,14 @@ const data = [
 ];
 
 const BackupBarChart = () => {
+  const { theme } = useTheme();
+  const chartBg = theme === 'dark' ? '#003238' : '#f7fafd';
   return (
-    <div className="chart">
-      <h2>Backup Jobs</h2>
+    <div
+      className="chart"
+      style={{ background: chartBg, borderRadius: 16, boxShadow: '0 2px 12px rgba(0,0,0,0.10)', padding: '0px 1px 10px 1px', marginBottom: 18 }}
+    >
+      <h3 style={{fontSize:'0.9rem',}}>Backup Jobs</h3>
       <div style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', paddingRight:'25px'}}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data}>
